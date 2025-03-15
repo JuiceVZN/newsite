@@ -1,66 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Service - Pricing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #2e2e2e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        .card {
-            background: #3a3a3a;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background: #4caf50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn.disabled {
-            background: #888;
-            cursor: not-allowed;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>API Service - v1.0</h1>
-        <div class="card">
-            <h2>Free Plan</h2>
-            <p>✓ Basic API Access</p>
-            <p>✓ Limited Requests</p>
-            <p>✓ Community Support</p>
-            <a href="#" class="btn">Get Free API Key</a>
-        </div>
-        <div class="card">
-            <h2>Premium Plan</h2>
-            <p>✓ All Free Features</p>
-            <p>✓ Higher Rate Limits</p>
-            <p>✓ Priority Support</p>
-            <a href="#" class="btn disabled">Coming Soon</a>
-        </div>
-        <div class="card">
-            <h2>Why Choose Our API?</h2>
-            <p>✓ High Performance & Reliability</p>
-            <p>✓ Regular Updates</p>
-            <p>✓ Developer Friendly</p>
-        </div>
-    </div>
-</body>
-</html>
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcadia API - Roblox Executor Development</title>
+  
+  <style>
+  :root {
+    --primary: #6c5ce7;
+    --secondary: #a29bfe;
+    --dark: #151519;
+    --darker: #0f0f12;
+    --light: #fff;
+    --gray: #2d2d35;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background: var(--darker);
+    color: var(--light);
+    overflow-x: hidden;
+  }
+  
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .glow {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    animation: glow 15s linear infinite;
+    pointer-events: none;
+    opacity: 0.1;
+  }
+  
+  @keyframes glow {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.5); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+  
+  .glow-1 {
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+    top: 0;
+    left: 30%;
+  }
+  
+  .glow-2 {
+    background: radial-gradient(circle, var(--secondary), transparent 70%);
+    top: 50%;
+    left: 70%;
+  }
+  
+  .blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.2;
+    z-index: 0;
+    animation: blobFloat 10s ease-in-out infinite;
+  }
+  
+  @keyframes blobFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, -30px) scale(1.1); }
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+  
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .highlight {
+    color: var(--primary);
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #a0a0a0;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--light);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.2);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <nav>
+      <div class="logo">Arcadia API</div>
+      <div class="nav-links">
+        <a href="docs.html">Documentation</a>
+        <a href='/examples'>Examples</a>
+        <a href="support">Support</a>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Build Powerful <span class="highlight">Roblox Executors</span> with Ease</h1>
+        <p class="description">Arcadia API provides developers with a robust, secure, and easy-to-use platform for creating custom Roblox executors.</p>
+        <a class='cta-button' href='/download'>Get Started Now</a>
+      </div>
+    </section>
+  </div>
+  </body></html>
