@@ -1,129 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tungsten</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: #bbbbbb; /* Brighter text */
-        }
-
-        #rainCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -3;
-            background: linear-gradient(to bottom, #555555, #888888); /* Lighter gradient */
-        }
-
-        .audio-toggle {
-            background: linear-gradient(45deg, #bbbbbb, #888888);
-        }
-
-        .cyber-background {
-            background: 
-                linear-gradient(to right, rgba(200,200,200,0.9) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(200,200,200,0.9) 1px, transparent 1px);
-            opacity: 0.4;
-        }
-
-        .background-overlay {
-            background: radial-gradient(circle at 50% 50%, 
-                rgba(200,200,200,0.4) 0%, 
-                rgba(200,200,200,0.8) 100%);
-        }
-
-        h1 {
-            background: linear-gradient(45deg, #bbbbbb, #888888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .card {
-            background: linear-gradient(145deg, #888888, #bbbbbb);
-        }
-
-        .info-card {
-            background: linear-gradient(145deg, #888888, #bbbbbb);
-        }
-
-        .credit-avatar {
-            background: linear-gradient(45deg, #bbbbbb, #888888);
-        }
-
-        .discord-link:hover {
-            color: #bbbbbb;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/k0Y4yB1/xeno.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Xeno | The Best Scripting Utility" />
+    <meta property="og:description" content="Experience the ultimate scripting utility with powerful execution and seamless performance. Join our community today!" />
+    <meta property="og:image" content="https://i.ibb.co/v4tMzLSg/image.png" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content="Xeno" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://i.ibb.co/v4tMzLSg/image.png" />
+    <meta property="theme-color" content="#FFFFFF" />
+    <title>Xeno | The Best Scripting Utility</title>
+  <script type="module" crossorigin src="/assets/index-CVBNI6-x.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/monaco-Dj3DcQT7.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BVXruqH0.css">
 </head>
 <body>
-    <canvas id="rainCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('rainCanvas');
-        const ctx = canvas.getContext('2d');
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const raindrops = [];
-        const maxDrops = 200;
-
-        class Raindrop {
-            constructor() {
-                this.reset();
-            }
-
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = -10;
-                this.speed = 10 + Math.random() * 5;
-                this.length = 15 + Math.random() * 20;
-                this.opacity = 0.3 + Math.random() * 0.5;
-            }
-
-            update() {
-                this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.reset();
-                }
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.moveTo(this.x, this.y);
-                ctx.lineTo(this.x, this.y + this.length);
-                ctx.strokeStyle = `rgba(200, 200, 200, ${this.opacity})`;
-                ctx.lineWidth = 1;
-                ctx.stroke();
-            }
-        }
-
-        for (let i = 0; i < maxDrops; i++) {
-            raindrops.push(new Raindrop());
-        }
-
-        function animate() {
-            ctx.fillStyle = 'rgba(85, 85, 85, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            raindrops.forEach(drop => {
-                drop.update();
-                drop.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-        animate();
-    </script>
+    <div id="root"></div>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ca30a71aaa6d4c798d3f3f799612e299"}'></script><!-- Cloudflare Pages Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9209c925feb30010","version":"2025.1.0","r":1,"token":"6b5fa1c29c9b489c9ca5ba9ff3bc1587","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
 </html>
